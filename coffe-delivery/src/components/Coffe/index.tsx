@@ -1,21 +1,38 @@
+import axios from "axios";
 import { ShoppingCart } from "phosphor-react";
+import { useEffect } from "react";
 import TradicionalCoffee from "../../assets/Coffee-1.svg";
 import { Counter } from "../Counter";
 import { CoffeComponent } from "./styles";
 
-export function Coffe() {
+interface CoffeProps {
+  img: string,
+  type: string[],
+  name: string,
+  description: string,
+  value: number,
+  amount:number
+
+}
+
+
+export function Coffe({img, type, name, description, value, amount}: CoffeProps) {
+
+  
   return (
     <CoffeComponent>
-        <img src={TradicionalCoffee} alt="" />
+        <img src={img} alt="" />
         <div className="tag-container">
-          <small>Tradicional</small>
+          {type.map(tp => {
+            return (<small>{tp}</small>)
+          })}
         </div>
-        <p>Expresso Tradicional</p>
-        <small className="description">O tradicional café feito com água quente e grãos moidos</small>
+        <p>{name}</p>
+        <small className="description">{description}</small>
         <div className="coffee-value-container">
-          <span className="coffee-value">R$ 9,90</span>
+          <span className="coffee-value">{value}</span>
           <div>
-            <Counter/>
+            <Counter amount={amount}/>
             <a className="cart" href="#">
               <ShoppingCart size={20} weight="fill"/>
             </a>
