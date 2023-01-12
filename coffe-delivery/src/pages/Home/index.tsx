@@ -2,34 +2,15 @@ import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import CoffeePrincipal from "../../assets/coffee-principal.svg";
 import { BeneficityColor, MainComponent, SectionComponent } from "./styles";
 import { Coffe } from "../../components/Coffe";
-import axios from 'axios'
-import { useEffect, useState } from "react";
+import { useContext} from "react";
+import { CoffeeContext } from "../../contexts/CoffeeContext";
 
-interface Coffee {
-  id: string,
-  img: string,
-  type: string[],
-  name: string,
-  description: string,
-  value: number,
-  amount:number
-}
 
 
 export function Home() {
+  const {coffee} = useContext(CoffeeContext)
 
-  const [coffee, setCoffee] = useState<Coffee[]>([])
-
-  async function getCoffee() {
-    const response = await axios.get("http://localhost:3333/coffees")
-    setCoffee(response.data)
-  }
-  useEffect(() => {
-    getCoffee();
-
-  },[])
-
-  console.log(coffee)
+  
   return (
     <>
       <MainComponent>
@@ -71,8 +52,20 @@ export function Home() {
       <SectionComponent>
         <h2>Nossos cafés</h2>
         <div className="container">
-          {coffee.map(cof => {
-            return ( <Coffe amount={cof.amount} key={cof.id} img={cof.img} name={cof.name} type={cof.type} description={cof.description} value={cof.value}/>)
+          {coffee.map((cof) => {
+            return (
+              <div key={cof.id}>
+                <Coffe
+                  id={cof.id}
+                  amount={cof.amount}
+                  img={cof.img}
+                  name={cof.name}
+                  type={cof.type}
+                  description={cof.description}
+                  value={cof.value}
+                />
+              </div>
+            );
           })}
         </div>
       </SectionComponent>

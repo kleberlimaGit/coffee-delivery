@@ -37,7 +37,7 @@ export const CoffeComponent = styled.div`
   .coffee-value-container{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 
     .coffee-value {
         font-weight: bold;
@@ -47,14 +47,14 @@ export const CoffeComponent = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.875rem;
+        gap: 0.3rem;
         flex: 1;
 
 
     }
 
     .cart {
-            background-color: ${props => props.theme["caqui-300"]};
+            background-color: ${props => props.theme["caqui-400"]};
             color: ${props => props.theme["caqui-100"]};
             padding: 4px 6px;
             border-radius:4px;
