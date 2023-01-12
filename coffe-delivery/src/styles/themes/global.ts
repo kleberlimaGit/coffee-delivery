@@ -14,7 +14,7 @@ body {
     background-color: ${props => props.theme["caqui-100"]};
     color: ${props => props.theme['caqui-700']};
     -webkit-font-smoothing: antialiased;
-    width: calc(1440px - 500px);
+    width: calc(1440px - 380px);
     margin:auto;
     padding-bottom: 5rem;
 }

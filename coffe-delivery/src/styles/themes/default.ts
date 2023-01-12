@@ -7,7 +7,10 @@ export const defaultTheme =  {
     'caqui-400':'#7d7364',
     'caqui-700':'#47382b',
 
-
+    'gray-100':'#DCDCDC',
+    'gray-200':"#D3D3D3",
+    'gray-300':"#C0C0C0",
+    
     'salmon':'#c05864',
 
     'blue': '#2b2b4f',

@@ -3,6 +3,7 @@ import { MapPin, ShoppingCart, Package, Timer, Coffee } from "phosphor-react";
 import { HeaderComponent } from "./styles";
 import { useContext, useEffect, useState } from "react";
 import { CoffeeContext } from "../../contexts/CoffeeContext";
+import Loading from '../../assets/carregando.gif'
 import VAR from "../../env";
 import axios from "axios";
 
@@ -11,16 +12,11 @@ interface Location {
   state?: string;
 }
 
-interface Coords {
-  latitude?: number;
-  longitude?: number;
-}
-
 export function Header() {
   const [location, setLocation] = useState<Location>({});
+  const [loading , setloading] = useState(true)
 
   async function getLocation() {
-    
     navigator.geolocation.getCurrentPosition((position) => {
        axios
       .get(
@@ -30,6 +26,7 @@ export function Header() {
         const city = response.data.results[0].components.city;
         const state = response.data.results[0].components.state_code;
         setLocation({ city:city, state:state });
+        setloading(false)
       });
     });
   }
@@ -44,18 +41,19 @@ export function Header() {
     <HeaderComponent>
       <img src={LogoCoffee} alt="" />
 
-      <div>
-        <span>
-          <MapPin size={18} weight="fill" />
-          {`${location.city}, ${location.state}`}
-        </span>
-        <button className="shoppingCart" type="button">
-          <span className={`shoppingCart-alert ${alert > 0 ? "active" : ""}`}>
-            {alert}
+    {loading ? <img src={Loading} /> :
+          <div>
+          <span>
+            <MapPin size={18} weight="fill" />
+            {`${location.city}, ${location.state}`}
           </span>
-          <ShoppingCart size={18} weight="fill" />
-        </button>
-      </div>
+          <button className="shoppingCart" type="button">
+            <span className={`shoppingCart-alert ${alert > 0 ? "active" : ""}`}>
+              {alert}
+            </span>
+            <ShoppingCart size={18} weight="fill" />
+          </button>
+        </div>}
     </HeaderComponent>
   );
 }
