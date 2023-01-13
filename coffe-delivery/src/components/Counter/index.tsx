@@ -4,10 +4,10 @@ import { CoffeeContext } from "../../contexts/CoffeeContext";
 import { CounterComponent } from "./styles";
 
 interface CountProps {
-  id: string;
-  amount: number;
-  reduceAmountValue: (id: string) => void;
-  incrementAmountValue: (id: string) => void;
+  id?: string;
+  amount?: number;
+  reduceAmountValue?: (id: string) => void;
+  incrementAmountValue?: (id: string) => void;
 }
 
 export function Counter({ amount, id, reduceAmountValue, incrementAmountValue}: CountProps) {
@@ -15,10 +15,12 @@ export function Counter({ amount, id, reduceAmountValue, incrementAmountValue}: 
 
 
    function handleDecreaseCoffee(){
+    if(reduceAmountValue && id)
     reduceAmountValue(id)
    }
 
    function handleIncreaseCoffee(){
+    if(incrementAmountValue && id)
     incrementAmountValue(id);
 
    }
