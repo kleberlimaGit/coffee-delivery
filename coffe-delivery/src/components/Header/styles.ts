@@ -6,7 +6,7 @@ export const HeaderComponent = styled.header`
   align-items: center;
   padding: 2rem 0;
   img {
-    width: 4.5rem;
+    width: 6rem;
   }
 
   div {

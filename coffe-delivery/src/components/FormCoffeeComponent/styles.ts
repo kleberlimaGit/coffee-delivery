@@ -51,7 +51,7 @@ form{
     }
 
     input:focus {
-        border: 1px solid ${props => props.theme["caqui-300"]};
+        border: 1.8px solid ${props => props.theme["caqui-300"]};
     }
 
     input[name="cep"]{
@@ -104,14 +104,13 @@ form{
 display: flex;
 flex-direction: column;
 gap: 0.875rem;
-margin: 1rem 0 0.5rem 0;
 background-color: ${props => props.theme["gray-100"]};
 
 
 padding: 3rem 2rem;
 border-radius: 6px;
 
-.payment-content{
+.payment-text{
     display: flex;
     gap: 0.2rem;
     line-height: 1.3;
@@ -122,6 +121,51 @@ border-radius: 6px;
 
     p{
         font-size: 0.875rem;
+    }
+}
+
+.payment-type{
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+    justify-content: space-between;
+
+    label:nth-child(3){
+        margin: 0 1rem;
+    }
+
+    label{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: ${props => props.theme["caqui-300"]};
+        padding: 8px 16px;
+        width: 12rem;
+        height: 3rem;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s background-color;
+    }
+    label:hover{
+        background-color: ${props => props.theme["caqui-400"]};
+        color: ${props => props.theme["caqui-100"]};
+
+    }
+
+    input{
+        display: none;
+    }
+
+    input[type="radio"]:checked  + label{
+        background-color: ${props => props.theme["caqui-400"]};
+        border: 3px solid ${props => props.theme["caqui-700"]};
+        color: ${props => props.theme["caqui-100"]};
+        outline: 0;
+    }
+
+    svg{
+        margin-right: 0.5rem;
     }
 }
 

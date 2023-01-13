@@ -9,8 +9,7 @@ export const CoffeComponent = styled.div`
 .tag-container {
     display: flex;
     align-items: center;
-    gap: 1px;
-
+    gap: 3px;
     small{
       background-color: ${(props) => props.theme["caqui-300"]};
       color: ${(props) => props.theme.blue};

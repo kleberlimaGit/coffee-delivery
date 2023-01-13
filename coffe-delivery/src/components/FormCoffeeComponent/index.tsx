@@ -1,4 +1,4 @@
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { Bank, Cardholder, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { FormComponent } from "./styles";
 
 export function FormCoffeeComponent() {
@@ -35,13 +35,30 @@ export function FormCoffeeComponent() {
         </div>
 
         <div className="container-dados-pagamento">
-          <div className="payment-content">
+          <div className="payment-text">
             <CurrencyDollar size={23} weight="bold" />
             <div>
               <h4>Pagamento</h4>
               <p>
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
               </p>
+            </div>
+          </div>
+          <div>
+            <div className="payment-type">
+              <div>
+             
+                <input type="radio" name="pagamento" id="credito" />
+                <label htmlFor="credito"><Cardholder size={20} weight="duotone"/> Crédito</label>
+              </div>
+              <div>
+                <input type="radio" name="pagamento" id="debito" />
+                <label htmlFor="debito"><Bank size={20} weight="duotone"/>Débito</label>
+              </div>
+             <div>
+              <input type="radio" name="pagamento" id="dinheiro" />
+             <label htmlFor="dinheiro"><Money size={20} weight="duotone"/>Dinheiro</label>
+             </div>
             </div>
           </div>
         </div>
