@@ -35,7 +35,7 @@ form{
     display: flex;
     flex-direction: column;
     gap: 0.875rem;
-    margin: 1rem 0 0.5rem 0;
+    margin-bottom: 0.5rem;
     background-color: ${props => props.theme["gray-100"]};
     
 

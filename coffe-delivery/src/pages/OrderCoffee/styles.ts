@@ -9,5 +9,6 @@ margin-top: 2.5rem;
 
 h3{
     font-family: 'Baloo 2', cursive;
+    margin-bottom: 1rem;
 }
 `
