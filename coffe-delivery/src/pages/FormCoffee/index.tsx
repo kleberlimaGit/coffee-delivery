@@ -61,20 +61,20 @@ export function FormCoffeeComponent() {
             <div>
               <div className="payment-type">
                 <div>
-                  <input type="radio" name="pagamento" id="credito" />
+                  <input type="radio" name="pagamento" id="credito" value="credito"/>
                   <label htmlFor="credito">
                     <Cardholder size={20} weight="duotone" /> Crédito
                   </label>
                 </div>
                 <div>
-                  <input type="radio" name="pagamento" id="debito" />
+                  <input type="radio" name="pagamento" id="debito" value="debito"/>
                   <label htmlFor="debito">
                     <Bank size={20} weight="duotone" />
                     Débito
                   </label>
                 </div>
                 <div>
-                  <input type="radio" name="pagamento" id="dinheiro" />
+                  <input type="radio" name="pagamento" id="dinheiro" value="dinheiro"/>
                   <label htmlFor="dinheiro">
                     <Money size={20} weight="duotone" />
                     Dinheiro

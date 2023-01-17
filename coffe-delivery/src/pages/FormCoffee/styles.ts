@@ -201,14 +201,14 @@ flex-direction: column;
   cursor: pointer;
   padding: 0.7rem 0;
   border-radius: 4px;
-  background-color: ${props => props.theme["caqui-400"]};
-  color: ${props => props.theme.blue};
+  background-color: ${props => props.theme["caqui-300"]};
+  color: ${props => props.theme.white};
   font-weight: bold;
   transition: 0.3s background-color;
   margin-top: 1rem;
 
   &:hover{
-    background-color: ${props => props.theme["caqui-300"]};
+    background-color: ${props => props.theme["caqui-400"]};
   }
 }
 
